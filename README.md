@@ -60,3 +60,151 @@ These dependencies are installed within the notebook using the following command
 
 # Install findspark
 !pip install -q findspark
+
+## Results:
+
+# 3. What is the average price for a four bedroom house sold per year, rounded to two decimal places?
+
++----+---------+
+|year| AvgPrice|
++----+---------+
+|2022|296363.88|
+|2019| 300263.7|
+|2020|298353.78|
+|2021|301819.44|
++----+---------+
+
+# 4. What is the average price of a home for each year the home was built, that have 3 bedrooms and 3 bathrooms, rounded to two decimal places?
+
++----------+---------+
+|date_built| AvgPrice|
++----------+---------+
+|      2016|290555.07|
+|      2012|293683.19|
+|      2017|292676.79|
+|      2014|290852.27|
+|      2013|295962.27|
+|      2011|291117.47|
+|      2015| 288770.3|
+|      2010|292859.62|
++----------+---------+
+
+# 5. What is the average price of a home for each year the home was built, that have 3 bedrooms, 3 bathrooms, with two floors, and are greater than or equal to 2,000 square feet, rounded to two decimal places?
+
++----------+---------+
+|date_built| AvgPrice|
++----------+---------+
+|      2016| 293965.1|
+|      2012|307539.97|
+|      2017|280317.58|
+|      2014|298264.72|
+|      2013|303676.79|
+|      2011|276553.81|
+|      2015|297609.97|
+|      2010|285010.22|
++----------+---------+
+
+# 6. What is the average price of a home per "view" rating, rounded to two decimal places, having an average home price greater than or equal to $350,000?
+# Order by descending view rating.
+# Although this is a small dataset, determine the run time for this query.
+
++----+----------+
+|view|  AvgPrice|
++----+----------+
+|  99|1061201.42|
+|  98|1053739.33|
+|  97|1129040.15|
+|  96|1017815.92|
+|  95| 1054325.6|
+|  94| 1033536.2|
+|  93|1026006.06|
+|  92| 970402.55|
+|  91|1137372.73|
+|  90|1062654.16|
+|  89|1107839.15|
+|  88|1031719.35|
+|  87| 1072285.2|
+|  86|1070444.25|
+|  85|1056336.74|
+|  84|1117233.13|
+|  83|1033965.93|
+|  82| 1063498.0|
+|  81|1053472.79|
+|  80| 991767.38|
++----+----------+
+only showing top 20 rows
+
+--- 2.045165892142 seconds ---
+
+# 9. Using the cached data, run the last query above, that calculates the average price of a home per "view" rating, rounded to two decimal places, having an average home price greater than or equal to $350,000.
+# Determine the runtime and compare it to the uncached runtime.
+
++----+----------+
+|view|  AvgPrice|
++----+----------+
+|  99|1061201.42|
+|  98|1053739.33|
+|  97|1129040.15|
+|  96|1017815.92|
+|  95| 1054325.6|
+|  94| 1033536.2|
+|  93|1026006.06|
+|  92| 970402.55|
+|  91|1137372.73|
+|  90|1062654.16|
+|  89|1107839.15|
+|  88|1031719.35|
+|  87| 1072285.2|
+|  86|1070444.25|
+|  85|1056336.74|
+|  84|1117233.13|
+|  83|1033965.93|
+|  82| 1063498.0|
+|  81|1053472.79|
+|  80| 991767.38|
++----+----------+
+only showing top 20 rows
+
+--- 0.8328479274212 seconds ---
+
+uncached table 	~ 2.0451 seconds
+cached table 	~ 0.83 seconds
+
+# 13. Using the parquet DataFrame, run the last query above, that calculates
+# the average price of a home per "view" rating, rounded to two decimal places,
+# having an average home price greater than or equal to $350,000.
+# Determine the runtime and compare it to the cached runtime.
+
++----+----------+
+|view|  AvgPrice|
++----+----------+
+|  99|1061201.42|
+|  98|1053739.33|
+|  97|1129040.15|
+|  96|1017815.92|
+|  95| 1054325.6|
+|  94| 1033536.2|
+|  93|1026006.06|
+|  92| 970402.55|
+|  91|1137372.73|
+|  90|1062654.16|
+|  89|1107839.15|
+|  88|1031719.35|
+|  87| 1072285.2|
+|  86|1070444.25|
+|  85|1056336.74|
+|  84|1117233.13|
+|  83|1033965.93|
+|  82| 1063498.0|
+|  81|1053472.79|
+|  80| 991767.38|
++----+----------+
+only showing top 20 rows
+
+--- 1.0589285123 seconds ---
+
+
+
+
+
+
